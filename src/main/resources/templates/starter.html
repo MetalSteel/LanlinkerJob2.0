@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>蓝瓴招聘系统后台主页V2.0</title>
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+  <link rel="stylesheet" th:href="@{/css/AdminLTE.min.css}">
+  <link rel="stylesheet" th:href="@{/css/skins/skin-blue.min.css}">
+  <link rel="stylesheet" th:href="@{/css/bootstrap-table.min.css}">
+  <link rel="stylesheet" th:href="@{/css/custom.css}">
+  <link rel="stylesheet" th:href="@{/css/datepicker3.css}">
+  <link rel="stylesheet" th:href="@{/css/fileinput.min.css}">
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+<!--提示框-->
+<div id="toastMsgDiv" style="text-align: center;display: none;">
+  <span id="toastMsg"></span>
+</div>
+<div class="wrapper">
+
+  <!--上方导航条-->
+  <header class="main-header">
+    <!-- Logo -->
+    <a href="#" class="logo">
+      <!--小Logo-->
+      <span class="logo-mini"><b>蓝瓴</b></span>
+      <!--大Logo-->
+      <span class="logo-lg">蓝瓴招聘系统V2</span>
+    </a>
+    <!--导航条-->
+    <nav class="navbar navbar-static-top" role="navigation">
+      <!--切换按钮-->
+      <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+        <span class="sr-only">Toggle navigation</span>
+      </a>
+      <!--右部导航条-->
+      <div class="navbar-custom-menu">
+        <ul class="nav navbar-nav">
+          <!-- User Account Menu -->
+          <li class="dropdown user user-menu">
+            <!-- Menu Toggle Button -->
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <!-- The user image in the navbar-->
+              <img th:src="${session.admin.icon}" class="user-image" alt="User Image">
+              <!-- hidden-xs hides the username on small devices so only the image appears. -->
+              <span th:switch="${session.admin.username}">
+                <span class="hidden-xs" th:case="admin">欢迎您,超级管理员</span>
+                <span class="hidden-xs" th:case="xia">欢迎您,夏伟</span>
+                <span class="hidden-xs" th:case="xu">欢迎您,徐总</span>
+                <span class="hidden-xs" th:case="shen">欢迎您,沈总</span>
+              </span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <!-- Left side column. contains the logo and sidebar -->
+  <aside class="main-sidebar">
+    <section class="sidebar" th:switch="${session.admin.username}">
+      <!-- 系统管理员菜单 -->
+      <ul th:case="admin" class="sidebar-menu" data-widget="tree">
+        <li class="header">系统功能</li>
+        <li ><a href="javascript:addFunction('/background/system')"><i class="fa fa-home"></i> <span>系统主页</span></a></li>
+        <li>
+          <a href="javascript:addFunction('/background/resume')">
+            <i class="fa fa-pie-chart"></i> <span>简历处理</span>
+            <span class="pull-right-container">
+              <small id="noProcessCountSpan" class="label pull-right bg-red"></small>
+            </span>
+          </a>
+        </li>
+        <li>
+          <a href="javascript:addFunction('/background/preliminary')">
+            <i class="fa fa-filter"></i> <span>初试筛选</span>
+            <span class="pull-right-container">
+              <small id="preliminaryCountSpan" class="label pull-right bg-green"></small>
+            </span>
+          </a>
+        </li>
+        <li>
+          <a href="javascript:addFunction('/background/retrial')">
+            <i class="fa fa-tag"></i> <span>复试预约</span>
+            <span class="pull-right-container">
+              <small id="retrialCountSpan" class="label pull-right bg-green"></small>
+            </span>
+          </a>
+        </li>
+        <li>
+          <a href="javascript:addFunction('/background/list')">
+            <i class="fa fa-database"></i> <span>简历仓库</span>
+          </a>
+        </li>
+        <li class="treeview">
+          <a href="#"><i class="fa fa-sun-o"></i> <span>系统设置</span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="javascript:addFunction('/background/email')"><i class="fa fa-envelope"></i>系统邮箱</a></li>
+          </ul>
+        </li>
+        <li class="treeview">
+          <a href="#"><i class="fa fa-bookmark-o"></i> <span>首页管理</span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="javascript:addFunction('/background/job')"><i class="glyphicon glyphicon-send"></i>职位设置</a></li>
+            <li><a href="javascript:addFunction('/background/education')"><i class="glyphicon glyphicon-tasks"></i>学历设置</a></li>
+          </ul>
+        </li>
+      </ul>
+      <!-- HR管理员菜单 -->
+      <ul th:case="xia" class="sidebar-menu" data-widget="tree">
+        <li class="header">系统功能</li>
+        <li ><a href="javascript:addFunction('/background/system')"><i class="fa fa-home"></i> <span>系统主页</span></a></li>
+        <li>
+          <a href="javascript:addFunction('/background/resume')">
+            <i class="fa fa-pie-chart"></i> <span>简历处理</span>
+            <span class="pull-right-container">
+              <small id="noProcessCountSpan" class="label pull-right bg-red"></small>
+            </span>
+          </a>
+        </li>
+      </ul>
+      <!-- CTO管理员菜单 -->
+      <ul th:case="xu" class="sidebar-menu" data-widget="tree">
+        <li class="header">系统功能</li>
+        <li ><a href="javascript:addFunction('/background/system')"><i class="fa fa-home"></i> <span>系统主页</span></a></li>
+        <li>
+          <a href="javascript:addFunction('/background/preliminary')">
+            <i class="fa fa-filter"></i> <span>初试筛选</span>
+            <span class="pull-right-container">
+              <small id="preliminaryCountSpan" class="label pull-right bg-green"></small>
+            </span>
+          </a>
+        </li>
+      </ul>
+      <!-- 副总管理员菜单 -->
+      <ul th:case="shen" class="sidebar-menu" data-widget="tree">
+        <li class="header">系统功能</li>
+        <li ><a href="javascript:addFunction('/background/system')"><i class="fa fa-home"></i> <span>系统主页</span></a></li>
+        <li>
+          <a href="javascript:addFunction('/background/retrial')">
+            <i class="fa fa-tag"></i> <span>复试预约</span>
+            <span class="pull-right-container">
+              <small id="retrialCountSpan" class="label pull-right bg-green"></small>
+            </span>
+          </a>
+        </li>
+        <li>
+          <a href="javascript:addFunction('/background/list')">
+            <i class="fa fa-database"></i> <span>简历仓库</span>
+          </a>
+        </li>
+        <li class="treeview">
+          <a href="#"><i class="fa fa-sun-o"></i> <span>系统设置</span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="javascript:addFunction('/background/email')"><i class="fa fa-envelope"></i>系统邮箱</a></li>
+          </ul>
+        </li>
+        <li class="treeview">
+          <a href="#"><i class="fa fa-bookmark-o"></i> <span>首页管理</span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="javascript:addFunction('/background/job')"><i class="glyphicon glyphicon-send"></i>职位设置</a></li>
+            <li><a href="javascript:addFunction('/background/education')"><i class="glyphicon glyphicon-tasks"></i>学历设置</a></li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+  </aside>
+
+  <!-- 主内容区域 -->
+  <div id="center_container" class="content-wrapper">
+
+  </div>
+  <!-- /.content-wrapper -->
+
+  <!--底部版权信息-->
+  <footer class="main-footer">
+    <div class="pull-right hidden-xs">
+      Make By WangGang
+    </div>
+    <strong>Copyright &copy; 2017 蓝瓴科技有限公司</strong>
+  </footer>
+  <div class="control-sidebar-bg"></div>
+</div>
+
+<!-- jQuery 3.1.1 -->
+<script th:src="@{/js/jquery-3.1.1.min.js}"></script>
+<!-- Bootstrap 3.3.7 -->
+<script th:src="@{/js/bootstrap.min.js}"></script>
+<!-- AdminLTE App -->
+<script th:src="@{/js/adminlte.min.js}"></script>
+<!-- Bootstrap-Table -->
+<script th:src="@{/js/bootstrap-table.min.js}"></script>
+<script th:src="@{/js/bootstrap-table-zh-CN.js}"></script>
+<!-- DatePicker -->
+<script th:src="@{/js/bootstrap-datepicker.js}"></script>
+<script th:src="@{/js/bootstrap-datepicker.zh-CN.js}"></script>
+<!-- FileInput -->
+<script th:src="@{/js/fileinput.min.js}"></script>
+<script th:src="@{/js/fileinput-zh-CN.js}"></script>
+<!-- 自定义JS -->
+<script th:src="@{/js/template/starter.js}"></script>
+
+</body>
+</html>

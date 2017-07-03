@@ -1,0 +1,218 @@
+<section class="content-header">
+    <h1>
+        初试筛选
+        <small>Preliminary Filter</small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> 初试筛选</a></li>
+        <li class="active">初试筛选</li>
+    </ol>
+</section>
+
+<div class="panel-body" style="padding-bottom:0px;">
+    <div class="panel panel-default">
+        <div class="panel-heading">初试回执表</div>
+        <div class="panel-body">
+            <form id="preliminaryForm" method="post" class="form-horizontal">
+                <div class="row" style="margin-top:15px">
+                    <label class="control-label col-sm-1" for="job">应聘职位</label>
+                    <div class="col-sm-5">
+                        <select id="job" class="form-control">
+                            <option value="0">请选择职位</option>
+                        </select>
+                    </div>
+                    <label class="control-label col-sm-1" for="name">初试人员</label>
+                    <div class="col-sm-5">
+                        <select id="name" class="form-control">
+                            <option value="0">请选择简历</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row" style="margin-top:15px">
+                    <label class="control-label col-sm-1">笔试图片</label>
+                    <div class="col-sm-5">
+                        <a href="javascript:findPicture();" target="_blank" class="form-control">查看笔试图片</a>
+                    </div>
+                    <label class="control-label col-sm-1">附件简历</label>
+                    <div class="col-sm-5">
+                        <a href="javascript:downloadAttachment();" class="form-control">下载附件简历</a>
+                    </div>
+                </div>
+                <div class="row" style="margin-top: 15px;">
+                    <label class="control-label col-sm-1">个人简历</label>
+                    <div class="col-md-11" style="padding: 0px 15px;">
+                        <div style="border: 1px solid #D2D6DE;">
+                        <ol class="breadcrumb" style="margin:0px;border-radius: 0px;">
+                            <li class="active">个人信息</li>
+                        </ol>
+                        <div>
+                            <div class="row" style="margin: 0px;">
+                                <div class="col-xs-4" style="line-height: 30px;">
+                                    <label>身份证号:</label>
+                                </div>
+                                <div id="card" class="col-xs-8 text-left" style="line-height: 30px;">
+                                </div>
+                            </div>
+                            <div class="row" style="margin: 0px;">
+                                <div class="col-xs-4" style="line-height: 30px;">
+                                    <label>户籍:</label>
+                                </div>
+                                <div id="register" class="col-xs-8 text-left" style="line-height: 30px;">
+                                </div>
+                            </div>
+                            <div class="row" style="margin: 0px;">
+                                <div class="col-xs-4" style="line-height: 30px;">
+                                    <label>现居住地:</label>
+                                </div>
+                                <div id="address" class="col-xs-8 text-left" style="line-height: 30px;">
+                                </div>
+                            </div>
+                            <div class="row" style="margin: 0px;">
+                                <div class="col-xs-4" style="line-height: 30px;">
+                                    <label>手机号码:</label>
+                                </div>
+                                <div id="phone" class="col-xs-8 text-left" style="line-height: 30px;">
+                                </div>
+                            </div>
+                            <div class="row" style="margin: 0px;">
+                                <div class="col-xs-4" style="line-height: 30px;">
+                                    <label>联系邮箱:</label>
+                                </div>
+                                <div id="email" class="col-xs-8 text-left" style="line-height: 30px;">
+                                </div>
+                            </div>
+                            <div class="row" style="margin: 0px;">
+                                <div class="col-xs-4" style="line-height: 30px;">
+                                    <label>常用QQ:</label>
+                                </div>
+                                <div id="qq" class="col-xs-8 text-left" style="line-height: 30px;">
+                                </div>
+                            </div>
+                            <ol class="breadcrumb" style="margin:0px;border-radius: 0px;">
+                                <li class="active">学历信息</li>
+                            </ol>
+                            <div class="row" style="margin: 0px;">
+                                <div class="col-xs-4" style="line-height: 30px;">
+                                    <label>毕业院校:</label>
+                                </div>
+                                <div id="university" class="col-xs-8 text-left" style="line-height: 30px;">
+                                </div>
+                            </div>
+                            <div class="row" style="margin: 0px;">
+                                <div class="col-xs-4" style="line-height: 30px;">
+                                    <label>最高学历:</label>
+                                </div>
+                                <div id="education" class="col-xs-8 text-left" style="line-height: 30px;">
+                                </div>
+                            </div>
+                            <div class="row" style="margin: 0px;">
+                                <div class="col-xs-4" style="line-height: 30px;">
+                                    <label>所修专业:</label>
+                                </div>
+                                <div id="major" class="col-xs-8 text-left" style="line-height: 30px;">
+                                </div>
+                            </div>
+                            <ol class="breadcrumb" style="margin:0px;border-radius: 0px;">
+                                <li class="active">工作信息</li>
+                            </ol>
+                            <div class="row" style="margin: 0px;">
+                                <div class="col-xs-4" style="line-height: 30px;">
+                                    <label>工作年限:</label>
+                                </div>
+                                <div id="workYear" class="col-xs-8 text-left" style="line-height: 30px;">
+                                </div>
+                            </div>
+                            <div class="row" style="margin: 0px;">
+                                <div class="col-md-4 col-xs-6" style="line-height: 30px;">
+                                    <label>最低工资(税前):</label>
+                                </div>
+                                <div id="workMinSalary" class="col-md-6 col-xs-6 text-left" style="line-height: 30px;">
+                                </div>
+                            </div>
+                            <div class="row" style="margin: 0px;">
+                                <div class="col-md-4 col-xs-6" style="line-height: 30px;">
+                                    <label>最高工资(税前):</label>
+                                </div>
+                                <div id="workMaxSalary" class="col-md-6 col-xs-6 text-left" style="line-height: 30px;">
+                                </div>
+                            </div>
+                            <div class="row" style="margin: 0px;">
+                                <div class="col-xs-4" style="line-height: 30px;">
+                                    <label>上岗时间:</label>
+                                </div>
+                                <div id="workGoDate" class="col-xs-8 text-left" style="line-height: 30px;">
+                                </div>
+                            </div>
+                            <div class="row" style="margin: 0px;">
+                                <div class="col-xs-4" style="line-height: 30px;">
+                                    <label>就职状态:</label>
+                                </div>
+                                <div id="workStatus" class="col-xs-8 text-left" style="line-height: 30px;">
+                                </div>
+                            </div>
+                            <div class="row" style="margin: 0px;">
+                                <div class="col-xs-4" style="line-height: 30px;">
+                                    <label>能否出差:</label>
+                                </div>
+                                <div id="workTrip" class="col-xs-8 text-left" style="line-height: 30px;">
+                                </div>
+                            </div>
+                            <div class="row" style="margin: 0px;">
+                                <div class="col-xs-4" style="line-height: 30px;">
+                                    <label>能否加班:</label>
+                                </div>
+                                <div id="workOvertime" class="col-xs-8 text-left" style="line-height: 30px;">
+                                </div>
+                            </div>
+                            <div class="row" style="margin: 0px;">
+                                <div class="col-xs-12" style="line-height: 30px;">
+                                    <label>其他备注:</label>
+                                </div>
+                            </div>
+                            <div class="row" style="margin: 0px;">
+                                <div id="remark" class="col-xs-12" style="line-height: 30px;border: 1px solid #F6F6F6;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                <div class="row" style="margin-top:15px">
+                    <label class="control-label col-sm-1" style="display: block;">初试成绩</label>
+                    <div class="col-sm-3">
+                        <input type="hidden" name="id" id="resumeId"/>
+                        <input type="number" id="grade" name="grade" class="form-control" placeholder="请输入初试成绩"/>
+                    </div>
+                    <label class="control-label col-sm-1" style="display: block;">是否通过</label>
+                    <div class="col-sm-3">
+                        <select name="pass" id="pass" class="form-control">
+                            <option value="0">请选择是否通过初试</option>
+                            <option value="true">通过初试</option>
+                            <option value="false">未通过初试</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row" style="margin-top:15px">
+                    <label class="control-label col-sm-1" for="suggestion">初试评语</label>
+                    <div class="col-sm-11">
+                        <textarea id="suggestion" name="suggestion" class="form-control" style="height: 200px;" placeholder="请输入初试通过/未通过的原因和理由"></textarea>
+                    </div>
+                </div>
+                <div class="row" style="margin-top:15px;">
+                    <div class="col-sm-2" style="text-align:left;">
+                        <button type="button" id="btn_submit" class="btn btn-block btn-primary btn-flat">提交结果</button>
+                    </div>
+                    <div class="col-sm-2" style="text-align:left;">
+                        <button type="button" id="btn_reset" class="btn btn-block btn-success btn-flat">清空结果</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<!--加载common.js-->
+<script th:src="@{/js/template/common.js}"></script>
+<!--加载preliminary.js-->
+<script th:src="@{/js/template/preliminary.js}"></script>

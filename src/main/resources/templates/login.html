@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>蓝瓴招聘系统后台登录V2.0</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" th:href="@{/css/AdminLTE.min.css}">
+    <link rel="stylesheet" th:href="@{/css/skins/skin-blue.min.css}">
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row" style="height: 100px;">
+        <h2 style="padding-left: 40px;color: #367FA9;"><b>蓝瓴招聘后台管理系统V2.0</b></h2>
+        <h5 style="padding-left: 40px;color: #CCC;">Lanlinker Recruit Background Manage System Ver2.0</h5>
+    </div>
+    <div class="row" style="background-color: #367FA9;height: 480px;">
+        <div class="col-md-6 text-center">
+            <img th:src="@{/img/login_bg2.png}" style="margin-top: 20px;">
+        </div>
+        <div class="col-md-6">
+            <div style="background-color: white;margin: 80px 150px;width: 350px;height: 320px;border-radius: 8px;padding: 20px;">
+                <h4 style="color: #367FA9;text-align: center;line-height: 30px;">
+                    <b>后台登录面板</b>
+                </h4>
+                <p style="color: red;text-align: center" th:text="${msg}"></p>
+                <form method="post" th:action="@{/background/loginSystem}" th:object="${admin}">
+                <div class="form-group">
+                    <label>管理员账号:</label>
+                    <div class="form-group has-feedback">
+                        <input type="text" name="username" th:value="*{username}" class="form-control" placeholder="请输入管理员账号">
+                        <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>管理员密码:</label>
+                    <div class="form-group has-feedback">
+                        <input type="password" name="password" th:value="*{password}" class="form-control" placeholder="请输入管理员账号">
+                        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                    </div>
+                </div>
+                <div style="margin-top: 40px;text-align: right">
+                    <button type="submit" class="btn btn-primary btn-flat">登录后台</button>
+                    <button type="reset" class="btn btn-default btn-flat">取消登录</button>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="row" style="height: 80px;color: #CCC;line-height: 80px;text-align: center;">
+        Copyright © 2017 蓝瓴招聘后台管理系统V2.0
+    </div>
+</div>
+</body>
+</html>

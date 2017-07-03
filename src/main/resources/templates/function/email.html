@@ -1,0 +1,67 @@
+<section class="content-header">
+    <h1>
+        邮箱设置
+        <small>Email Setting</small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> 邮箱设置</a></li>
+        <li class="active">邮箱设置</li>
+    </ol>
+</section>
+
+<div class="container" style="padding-top: 20px;">
+    <div class="row">
+        <div class="col-md-11">
+            <div class="box box-success">
+                <div class="box-header">
+                    <h3 class="box-title">服务设置</h3>
+                </div>
+                <div class="box-body">
+                    <form id="emailForm">
+                        <div class="row" style="margin-top: 15px;">
+                            <label class="control-label col-md-1 text-left" style="line-height: 35px;">主机地址</label>
+                            <div class="col-md-11">
+                                <input id="emailHost" name="host" type="text" class="form-control" placeholder="请输入主机地址"/>
+                            </div>
+                        </div>
+                        <div class="row" style="margin-top: 15px;">
+                            <label class="control-label col-md-1 text-center" style="line-height: 35px;">邮箱账号</label>
+                            <div class="col-md-11">
+                                <input id="emailUsername" name="username" type="text" class="form-control" placeholder="请输入邮箱账号"/>
+                            </div>
+                        </div>
+                        <div class="row" style="margin-top: 15px;">
+                            <label class="control-label col-md-1 text-center" style="line-height: 35px;">邮箱密码</label>
+                            <div class="col-md-11">
+                                <input id="emailPassword" name="password" type="text" class="form-control" placeholder="请输入邮箱密码"/>
+                            </div>
+                        </div>
+                        <div class="row" style="margin-top: 15px;">
+                            <label class="control-label col-md-1 text-center" style="line-height: 35px;">主题内容</label>
+                            <div class="col-md-11">
+                                <input id="emailSubject" name="subject" type="text" class="form-control" placeholder="请输入主题内容"/>
+                            </div>
+                        </div>
+                        <div class="row" style="margin-top: 15px;">
+                            <label class="control-label col-md-1 text-center" style="line-height: 35px;">收件称呼</label>
+                            <div class="col-md-11">
+                                <input id="emailStart" name="start" type="text" class="form-control" placeholder="请输入收件称呼"/>
+                            </div>
+                        </div>
+                        <div class="row" style="margin-top: 15px;">
+                            <label class="control-label col-md-1 text-center" style="line-height: 35px;">发件称呼</label>
+                            <div class="col-md-11">
+                                <input id="emailEnd" name="end" type="text" class="form-control" placeholder="请输入发件称呼"/>
+                            </div>
+                        </div>
+                        <div class="row" style="text-align: right;padding-right: 19px;padding-top: 20px;">
+                            <button onclick="updateEmail();" type="button" class="btn btn-success btn-flat">更新配置</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--加载email.js-->
+<script th:src="@{/js/template/email.js}"></script>

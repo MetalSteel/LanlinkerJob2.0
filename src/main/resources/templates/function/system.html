@@ -1,0 +1,147 @@
+<section class="content-header">
+    <h1>
+        后台主页
+        <small>Control Panel</small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> 主页</a></li>
+        <li class="active">后台主页</li>
+    </ol>
+</section>
+<div class="container-fluid" style="margin-top: 20px;">
+    <div class="row">
+        <div class="col-lg-3 col-xs-6">
+            <!-- small box -->
+            <div class="small-box bg-aqua">
+                <div class="inner">
+                    <h3 id="resumesAll">0</h3>
+
+                    <p>简历总数</p>
+                </div>
+                <div class="icon">
+                    <i class="fa  fa-file-text-o"></i>
+                </div>
+                <a href="#" class="small-box-footer">
+                   查看简历 <i class="fa fa-arrow-circle-right"></i>
+                </a>
+            </div>
+        </div>
+        <!-- ./col -->
+        <div class="col-lg-3 col-xs-6">
+            <!-- small box -->
+            <div class="small-box bg-yellow">
+                <div class="inner">
+                    <h3 id="resumesToday">0</h3>
+
+                    <p>今日新增</p>
+                </div>
+                <div class="icon">
+                    <i class="ion ion-person-add"></i>
+                </div>
+                <a href="#" class="small-box-footer">
+                    查看新增 <i class="fa fa-arrow-circle-right"></i>
+                </a>
+            </div>
+        </div>
+        <!-- ./col -->
+        <div class="col-lg-3 col-xs-6">
+            <!-- small box -->
+            <div class="small-box bg-green">
+                <div class="inner">
+                    <h3><span id="resumesPreliminary">0</span><sup style="font-size: 20px">%</sup></h3>
+
+                    <p>初试通过率</p>
+                </div>
+                <div class="icon">
+                    <i class="ion ion-stats-bars"></i>
+                </div>
+                <a href="#" class="small-box-footer">
+                    查看初试 <i class="fa fa-arrow-circle-right"></i>
+                </a>
+            </div>
+        </div>
+        <!-- ./col -->
+        <div class="col-lg-3 col-xs-6">
+            <!-- small box -->
+            <div class="small-box bg-red">
+                <div class="inner">
+                    <h3><span id="resumesRetrial">0</span><sup style="font-size: 20px">%</sup></h3>
+
+                    <p>复试通过率</p>
+                </div>
+                <div class="icon">
+                    <i class="ion ion-pie-graph"></i>
+                </div>
+                <a href="#" class="small-box-footer">
+                    查看复试 <i class="fa fa-arrow-circle-right"></i>
+                </a>
+            </div>
+        </div>
+        <!-- ./col -->
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <ul class="timeline">
+
+                <!-- timeline time label -->
+                <li class="time-label">
+        <span class="bg-red">
+            2017 06.18
+        </span>
+                </li>
+                <!-- /.timeline-label -->
+
+                <!-- timeline item -->
+                <li>
+                    <!-- timeline icon -->
+                    <i class="fa fa-envelope bg-blue"></i>
+                    <div class="timeline-item">
+                        <span class="time"><i class="fa fa-clock-o"></i> 12:05</span>
+
+                        <h3 class="timeline-header"><a href="#">蓝瓴招聘系统2.0项目开始跟进</a> 项目更新</h3>
+
+                        <div class="timeline-body">
+                            项目选型方案为SpringBoot+SpringDataJPA+Thyealeaf+AdminLTE,后台采用RESTful,吸收了前面的缺点进行改进,增加了大量的特性
+                        </div>
+
+                        <div class="timeline-footer">
+                            <a class="btn btn-primary btn-xs">查看详情</a>
+                        </div>
+                    </div>
+                </li>
+                <!-- END timeline item -->
+
+                <!-- timeline time label -->
+                <li class="time-label">
+        <span class="bg-green">
+            2017 05.15
+        </span>
+                </li>
+                <!-- /.timeline-label -->
+
+                <!-- timeline item -->
+                <li>
+                    <!-- timeline icon -->
+                    <i class="fa fa-cube bg-blue"></i>
+                    <div class="timeline-item">
+                        <span class="time"><i class="fa fa-clock-o"></i> 10:00</span>
+
+                        <h3 class="timeline-header"><a href="#">蓝瓴招聘系统1.0项目开始启动</a> 项目启动</h3>
+
+                        <div class="timeline-body">
+                            项目选型方案为SpringMVC+Spring+Mybatis,为了前期快速迭代开发而选用的框架,存在些许问题.
+                        </div>
+
+                        <div class="timeline-footer">
+                            <a class="btn btn-primary btn-xs">查看详情</a>
+                        </div>
+                    </div>
+                </li>
+                <!-- END timeline item -->
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!--加载system.js-->
+<script th:src="@{/js/template/system.js}"></script>
